@@ -1,8 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 
 export const getQuote = createServerFn({ method: 'GET' }).handler(async () => {
-  console.log(process.env.API_KEY)
-
   const response = await fetch(
     'https://api.api-ninjas.com/v2/randomquotes?categories=inspirational',
     {
