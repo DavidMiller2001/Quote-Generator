@@ -37,11 +37,14 @@ function Home() {
   }, [])
 
   return (
-    <div className="bg-linear-to-br from-slate-950 via-slate-900 to-indigo-950 text-white flex items-center justify-center flex-col gap-4 h-screen">
+    <div className="bg-linear-to-br from-slate-950 via-slate-900 to-indigo-950 text-white flex items-center justify-center flex-col gap-4 h-screen p-8">
+      <h1 className="text-sm uppercase tracking-widest text-indigo-300">
+        Quote Generator
+      </h1>
       <main className="rounded-3xl border border-white/10 bg-white/10 backdrop-blur-md shadow-2xl p-8 sm:p-10 text-center">
-        <h1 className="font-bold italic text-3xl sm:text-5xl leading-tight mb-6">
+        <h2 className="font-bold italic text-3xl sm:text-4xl leading-tight mb-6">
           {`"${quote.quoteText}"`}
-        </h1>
+        </h2>
 
         <div className="h-px w-24 bg-indigo-300/50 mx-auto mb-6" />
 
