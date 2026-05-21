@@ -6,7 +6,7 @@ export const getQuote = createServerFn({ method: 'GET' }).handler(async () => {
     {
       method: 'GET',
       headers: {
-        'x-api-key': import.meta.env.VITE_API_KEY,
+        'x-api-key': import.meta.env.API_KEY,
       },
     },
   )
@@ -19,18 +19,3 @@ export const getQuote = createServerFn({ method: 'GET' }).handler(async () => {
 
   return data[0]
 })
-
-function debounce<T extends (...args: any[]) => void>(
-  func: T,
-  delay: number,
-): (...args: Parameters<T>) => void {
-  let timer: ReturnType<typeof setTimeout> | undefined
-
-  return function (this: any, ...args: Parameters<T>): void {
-    if (timer) clearTimeout(timer)
-
-    timer = setTimeout(() => {
-      func.apply(this, args)
-    }, delay)
-  }
-}
